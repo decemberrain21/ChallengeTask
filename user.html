@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="userinfo"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        val = location.href.split('user.html?');
+        val = val[1].split('&&');
+        if (val.length > 0) {
+            $("#userinfo").append("<div>" + val[0].split("=")[1].replace(/%20/g, " ") + "</div><img src='" + val[1].split("pic=")[1] + "' />")
+        }
+    });
+
+</script>
+
+</html>
